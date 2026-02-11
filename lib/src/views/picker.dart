@@ -13,7 +13,8 @@ class Picker {
     PickerConfig pickerConfig = const PickerConfig(),
   }) async {
     _pickerConfig = pickerConfig;
-    final result = await Navigator.of(context).push<List<AssetEntity>>(
+    final result = await Navigator.of(context, rootNavigator: true)
+        .push<List<AssetEntity>>(
       MaterialPageRoute(
         builder: (context) => const PickerPage(),
       ),
